@@ -20,8 +20,34 @@ const Profiles = () => {
                 <h1 className="text-3xl md:text-6xl text-white text-center">Who&#39;s watching?</h1>
                 <div className="flex items-center justify-center gap-8 mt-10">
                     <div onClick={() => router.push('/')}>
-                        {user?.name}
-                        {/* <UserCard name={user?.name} /> */}
+                        <div
+                            className="
+                                w-44
+                                h-44
+                                rounded-md
+                                flex
+                                items-center
+                                justify-center
+                                border-2
+                                border-transparent
+                                group-hover:cursor-pointer
+                                group-hover:border-white
+                                overflow-hidden
+                            "
+                        >
+                            <img src="/image/default-blue.png" alt="Profile" />
+                        </div>
+                        <div
+                            className="
+                                mt-4
+                                text-gray-400
+                                text-2xl
+                                text-center
+                                group-hover:text-white
+                            "
+                        >
+                            {user?.name}
+                        </div>
                     </div>
                 </div>
             </div>

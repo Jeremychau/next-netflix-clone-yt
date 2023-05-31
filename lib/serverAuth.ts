@@ -13,7 +13,7 @@ const serverAuth = async(req:NextApiRequest) => {
 
         return { currentUser };
     } catch (error) {
-        console.log('error');
+        console.log(error);
     }
 }
 
