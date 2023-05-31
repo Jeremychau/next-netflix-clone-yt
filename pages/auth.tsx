@@ -1,6 +1,8 @@
-import Input from "@/components/Input";
 import axios from "axios";
 import { useCallback, useState } from "react";
+
+import InputModal from "@/components/InputModal";
+
 import { signIn } from 'next-auth/react';
 
 import { FcGoogle } from "react-icons/fc";
@@ -45,10 +47,10 @@ const Auth = () => {
                         <h2 className="text-white text-4xl mb-8 font-semibold">{varinant === 'login'? 'Sign In' : 'Register'}</h2>
                         <div className="flex flex-col gap-4">
                             {varinant === 'register' && (
-                                <Input id="name" onChange={(event:any) => setName(event.target.value)} value={name} label="User Name" />
+                                <InputModal id="name" onChange={(event:any) => setName(event.target.value)} value={name} label="User Name" />
                             )}
-                            <Input id="email" onChange={(event:any) => setEmail(event.target.value)} value={email} label="email" type="email" />
-                            <Input id="password" onChange={(event:any) => setPassword(event.target.value)} value={password} label="Password" type="password" />
+                            <InputModal id="email" onChange={(event:any) => setEmail(event.target.value)} value={email} label="email" type="email" />
+                            <InputModal id="password" onChange={(event:any) => setPassword(event.target.value)} value={password} label="Password" type="password" />
                         </div>
                         <button onClick={varinant === 'login'? login : register} className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-300 translate">
                             {varinant === 'login'? 'Login' : 'Sign Up'}

@@ -8,7 +8,7 @@ interface InputProps {
     type?:string;
 }
 
-const Input:React.FC<InputProps> = ( {id,onChange,value,label,type} ) => {
+const InputModal:React.FC<InputProps> = ( {id,onChange,value,label,type} ) => {
     return (
         <div className="relative">
             <input
@@ -59,4 +59,4 @@ const Input:React.FC<InputProps> = ( {id,onChange,value,label,type} ) => {
     )
 }
 
-export default Input;
+export default InputModal;
