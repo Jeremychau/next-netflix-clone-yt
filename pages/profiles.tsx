@@ -3,14 +3,7 @@ import { NextPageContext } from "next";
 import { getSession } from "next-auth/react";
 import { useRouter } from "next/router";
 
-export async function getServerSideProps(context:NextPageContext) {
-    const session = await getSession(context);
-    if(!session) return { redirect: { destination: '/auth', permanent: false } }
-
-    return { props:{} }
-}
-
-const Profiles = () => {
+export default function Profiles() {
     const router = useRouter();
     const { data:user} =  useCurrentUser();
 
@@ -55,4 +48,9 @@ const Profiles = () => {
     )
 }
 
-export default Profiles;
+export async function getServerSideProps(context:NextPageContext) {
+    const session = await getSession(context);
+    if(!session) return { redirect: { destination: '/auth', permanent: false } }
+
+    return { props:{} }
+}
